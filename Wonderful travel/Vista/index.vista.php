@@ -12,19 +12,23 @@
     <div class="container">
         <header>Wonderful travel</header>
         <canvas id="canvas" width="200" height="200"></canvas>
-        <form id="viatgeForm">
+        <form id="viatgeForm" method="POST">
             <div class="form-group">
                 <label for="continent">Continent:</label>
-                <select id="continent" class="form-control">
+                <select id="continent" name="continent" class="form-control">
                     <option value="">Selecciona un continent</option>
-                    <!-- Opcions de continents -->
+                    <?php foreach ($continents as $continent): ?>
+                        <option value="<?= $continent['continent'] ?>" <?= isset($_COOKIE['selectedContinent']) && $_COOKIE['selectedContinent'] == $continent['continent'] ? 'selected' : '' ?>><?= $continent['continent'] ?></option>
+                    <?php endforeach; ?>
                 </select>
             </div>
             <div class="form-group">
                 <label for="pais">País:</label>
-                <select id="pais" class="form-control">
+                <select id="pais" name="pais" class="form-control">
                     <option value="">Selecciona un país</option>
-                    <!-- Opcions de països -->
+                    <?php foreach ($paisos as $pais): ?>
+                        <option value="<?= $pais['pais'] ?>"><?= $pais['pais'] ?></option>
+                    <?php endforeach; ?>
                 </select>
             </div>
             <div class="form-group">
@@ -37,7 +41,7 @@
             </div>
             <div class="form-group">
                 <label for="imatge">Imatge:</label>
-                <img id="imatge" src="" alt="Imatge del país" class="img-fluid">
+                <img id="imatge" src="./Vista/img/placeholder.webp" alt="Imatge del país" class="img-fluid">
             </div>
             <button type="submit" class="btn btn-primary">Reservar</button>
         </form>
@@ -45,5 +49,22 @@
             <!-- Llista de reserves -->
         </div>
     </div>
+    <script>
+        document.getElementById('continent').addEventListener('change', function() {
+            document.cookie = "selectedContinent=" + this.value + "; path=/";
+            this.form.submit();
+        });
+
+        document.getElementById('pais').addEventListener('change', function() {
+            const pais = this.value;
+            fetch(`./Controlador/controlador.php?pais=${pais}`)
+                .then(response => response.json())
+                .then(data => {
+                    document.getElementById('preu').value = data.preu;
+                    const imatgeSrc = data.imatge ? data.imatge : './Vista/img/placeholder.webp';
+                    document.getElementById('imatge').src = imatgeSrc;
+                });
+        });
+    </script>
 </body>
 </html>

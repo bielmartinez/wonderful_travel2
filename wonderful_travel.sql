@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 03-12-2024 a las 20:20:09
+-- Tiempo de generación: 05-12-2024 a las 13:48:34
 -- Versión del servidor: 10.4.32-MariaDB
 -- Versión de PHP: 8.1.25
 
@@ -42,17 +42,17 @@ CREATE TABLE `destins` (
 --
 
 INSERT INTO `destins` (`id`, `continent`, `pais`, `preu`, `foto`) VALUES
-(1, 'Àsia', 'India', 1950, NULL),
-(2, 'Europa', 'França', 2300.5, NULL),
-(3, 'Amèrica', 'Brasil', 1800, 'brazil.jpg'),
-(4, 'Àfrica', 'Sud-àfrica', 2500, NULL),
-(5, 'Oceania', 'Austràlia', 3200.75, 'australia.jpg'),
-(6, 'Europa', 'Espanya', 2000, NULL),
-(7, 'Àsia', 'Japó', 2700, 'japon.jpg'),
-(8, 'Europa', 'Itàlia', 2200, NULL),
-(9, 'Amèrica', 'Mèxic', 1500, 'mexic.jpg'),
-(10, 'Àfrica', 'Egipte', 1900, NULL),
-(11, 'Oceania', 'Nova Zelanda', 3400.5, 'nova_zelanda.jpg');
+(1, 'Àsia', 'India', 1950, './Vista/img/India.jp'),
+(2, 'Europa', 'França', 2300.5, './Vista/img/França.jp'),
+(3, 'Amèrica', 'Brasil', 1800, './Vista/img/Brasil.jpg'),
+(4, 'Àfrica', 'Sud-àfrica', 2500, './Vista/img/Sudafrica.jpg'),
+(5, 'Oceania', 'Austràlia', 3200.75, './Vista/img/Australia.jpg'),
+(6, 'Europa', 'Espanya', 2000, './Vista/img/Espanya.jpg'),
+(7, 'Àsia', 'Japó', 2700, './Vista/img/Japo.jpg'),
+(8, 'Europa', 'Itàlia', 2200, './Vista/img/Italia.jpg'),
+(9, 'Amèrica', 'Mèxic', 1500, './Vista/img/Mexic.jpg'),
+(10, 'Àfrica', 'Egipte', 1900, './Vista/img/Egipte.jpg'),
+(11, 'Oceania', 'Nova Zelanda', 3400.5, './Vista/img/Nova_Zelanda.jpg');
 
 -- --------------------------------------------------------
 
