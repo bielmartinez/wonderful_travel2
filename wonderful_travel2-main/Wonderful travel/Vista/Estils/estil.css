@@ -1,0 +1,15 @@
+body {
+    background-color: #407ab4;
+    color: #ffffff;
+}
+
+header {
+    font-size: 2em;
+    font-weight: bold;
+    color: #ffffff;
+    text-align: center;
+    background-color: #407ab4;
+    padding: 1em;
+    border-radius: 0.5em;
+    margin-bottom: 1em;
+}
