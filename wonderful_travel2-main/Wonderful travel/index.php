@@ -12,7 +12,7 @@ $continents = selectContinent();
 $paisos = [];
 $selectedContinent = isset($_COOKIE['selectedContinent']) ? $_COOKIE['selectedContinent'] : '';
 
-if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['continent'])) {
     $selectedContinent = $_POST['continent'];
     $paisos = selectPais($selectedContinent);
 }
